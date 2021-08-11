@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odin Project</title>
+</head>
+<body>
+    
+    <script>
+        
+        const computerPlay = () => {
+            var random = Math.random()
+
+            if (random <= (1/3)) return "Rock"
+            if (random <= (2/3)) return "Paper"
+            return "Scissors"
+        }
+
+        const playRound = (playerSelection, computerSelection) => {
+            switch (playerSelection.toLowerCase()) {
+                    case computerSelection.toLowerCase():
+                    return "draw"
+                    break;
+
+                    case "paper":
+                    if (computerSelection == "Scissors") return "lose"
+                    break;
+
+                    case "scissors":
+                    if (computerSelection == "Rock") return "lose"
+                    break;
+
+                    case "rock":
+                    if (computerSelection == "Paper") return "lose"
+                    break;
+            }           
+            return "win"
+
+        }
+
+        const game = () => {
+            let score = 0
+            if (playRound(prompt("Input"), computerPlay()) == "win") score++
+            console.log(score)
+            if (playRound(prompt("Input"), computerPlay()) == "win") score++
+            console.log(score)
+            if (playRound(prompt("Input"), computerPlay()) == "win") score++
+            console.log(score)
+            if (playRound(prompt("Input"), computerPlay()) == "win") score++
+            console.log(score)
+            if (playRound(prompt("Input"), computerPlay()) == "win") score++
+            console.log(score)
+
+        }
+
+        game()
+
+    </script>
+</body>
+</html>
